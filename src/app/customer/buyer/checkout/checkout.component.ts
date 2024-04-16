@@ -23,7 +23,7 @@ order_dto!:Order
   constructor(private customerService:CustomerService, private router:Router){}
 
   ngOnInit(): void {
-    this.customerService.currentProduct.subscribe(product=>this.single_product_id =product);
+    this.customerService.currentProduct.subscribe((product: any)=>this.single_product_id =product);
     this.user_id = Number(sessionStorage.getItem('user_session_id'));
     this.productDetail(this.single_product_id);
     this.userAddress(this.user_id);
@@ -43,6 +43,9 @@ order_dto!:Order
     },error=>{
       console.log("My error", error)
     })
+  }
+  gotoOrder(){
+    this.router.navigate(['home'])
   }
   placeOrder(){
     this.order_dto ={

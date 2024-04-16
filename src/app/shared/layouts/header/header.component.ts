@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
@@ -30,7 +29,7 @@ export class HeaderComponent implements OnInit {
   logout(){
     sessionStorage.removeItem("user_session_id");
     sessionStorage.removeItem("role");
-    this.router.navigateByUrl('/sign-in');
+    this.router.navigate(['sign-in'])
     location.reload();
   }
 }

@@ -38,12 +38,12 @@
           </div>
           <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" placeholder="1234 Main St" formControlName="addLine1">
+            <input type="text" class="form-control" placeholder="Arvalli Society" formControlName="addLine1">
 
           </div>
           <div class="form-group">
             <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" placeholder="Apartment, studio, or floor"
+            <input type="text" class="form-control" placeholder="Apartment, Floor No."
               formControlName="addLine2">
           </div>
           <div class="form-row">
@@ -55,10 +55,12 @@
             <div class="form-group col-md-4">
               <label for="inputState">State</label>
               <select id="inputState" class="form-control" formControlName="state">
-                <option selected>Choose...</option>
+                <option selected disabled>Choose...</option>
+                <option>Gujarat</option>
+                <option>Mahrastra</option>
                 <option>UP</option>
                 <option>MP</option>
-                <option>HP</option>
+                <option>RJ</option>
               </select>
 
             </div>
@@ -73,7 +75,7 @@
             <select multiple class="form-control" formControlName="language">
               <option>English</option>
               <option>Hindi</option>
-              <option>Oriya/Odiya</option>
+              <option>Gujarati</option>
               <option>Bengali</option>
               <option>Other</option>
             </select>

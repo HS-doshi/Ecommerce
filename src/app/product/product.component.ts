@@ -83,7 +83,7 @@ export class ProductComponent implements OnInit{
     this.edit_prouct = true;
     this.popup_header = "Edit Product";
     this.addEditProductDForm.reset();
-    this.productService.singleProduct(id).subscribe(data=>{
+    this.productService.singleProduct(id).subscribe((data:any)=>{
       this.single_product_data = data;
       console.log("Single Data", this.single_product_data);
       this.edit_product_id = data.id;

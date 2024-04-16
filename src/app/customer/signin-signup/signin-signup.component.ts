@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router'
 import { User } from '../../core/Model/object-model';
 import { LoginSignupService } from '../../shared/services/login-signup.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -88,7 +88,7 @@ export class SigninSignupComponent {
         uploadPhoto:this.user_reg_data.uploadPhoto,
         role:this.user_reg_data.role
       }
-      this.loginService.userRegister(this.user_dto).subscribe(data=>{
+      this.loginService.userRegister(this.user_dto).subscribe((data:any)=>{
         alert("User Register Successfull ☺");
         this.router.navigateByUrl('/sign-in');
       })
