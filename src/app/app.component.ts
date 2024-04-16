@@ -15,7 +15,7 @@ export class AppComponent {
   screenHeight:any;
   screenWidth:any;
   footerMaxHeight!:number;
-  title = 'angularecommerce';
+  title = 'Ecommerce';
 
   constructor(){
     this.getScreenSize(event);
