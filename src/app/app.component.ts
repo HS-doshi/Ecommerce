@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/layouts/header/header.component';
 import { FooterComponent } from './shared/layouts/footer/footer.component';
+import { PdfMakeComponent } from './pdf-make/pdf-make.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,PdfMakeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,9 +18,6 @@ export class AppComponent {
   footerMaxHeight!:number;
   title = 'Ecommerce';
 
-  constructor(){
-    this.getScreenSize(event);
-  }
   @HostListener('window:resize', ['$event'])
   getScreenSize(event:any){
     this.screenHeight = window.innerHeight;
