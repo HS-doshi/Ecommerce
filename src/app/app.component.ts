@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/layouts/header/header.component';
 import { FooterComponent } from './shared/layouts/footer/footer.component';
 import { PdfMakeComponent } from './pdf-make/pdf-make.component';
+import { OtpVerficationComponent } from './otp-verfication/otp-verfication.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,PdfMakeComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,PdfMakeComponent,OtpVerficationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

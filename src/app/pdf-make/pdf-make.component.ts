@@ -14,7 +14,7 @@ export class PdfMakeComponent{
   clientData = {
     name:'John Doe',
     address: 'Prahaladnagar',
-    city:'AHmedabad',
+    city:'Ahmedabad',
     state:'GJ',
     zip:'388120',
     transition:[
@@ -35,11 +35,21 @@ export class PdfMakeComponent{
     docDefi.text(`Client City : ${this.clientData.city}`,10,30)
     docDefi.text(`Client State: ${this.clientData.state}`,10,40)
     docDefi.text(`Client Address : ${this.clientData.address}`,10,50)
+
+    let yPos = 70;
+    this.clientData.transition.forEach((transation)=>{
+      docDefi.text(`
+      ${transation.date} - ${transation.description}  $${transation.amount}`,
+    10,
+    yPos);
+    yPos+=10;
+    });
+
+    docDefi.setFontSize(15);
     docDefi.addImage(`https://hips.hearstapps.com/hmg-prod/images/avatar-concept-1580768332.jpg?crop=0.668xw:0.668xh;0.188xw,0.135xh&resize=640:*`,
     'PNG',
-    30,60,120,100
+    30,yPos+=10,120,100
     );
     docDefi.save('hello.pdf')
   }
-}
-;
+};
