@@ -13,21 +13,20 @@ function generateOTP(){
 }
 let generateOtp = '';
 app.post('/api/generate-otp',(req,res)=>{
-  generateOTP = generateOTP()
+  generateOtp = generateOTP()
   res.json({
     success:true,
     otp:generateOTP,
   });
 })
 
-app.post('/api/veryfy-otp',(req,res)=>{
+app.post('/api/verify-otp',(req,res)=>{
   const {otp} = req.body;
 
-  if(generateOtp==otp)
+  if(otp === generateOtp)
   {
     res.json({
       success:true,
-      message : 'OTP Verified Successfully!'
     })
   }
   else{
@@ -36,6 +35,7 @@ app.post('/api/veryfy-otp',(req,res)=>{
     })
   }
 });
+// start server using listen.
 app.listen(port,()=>{
   console.log(`Server listening at http://localhost:${port}`)
 })

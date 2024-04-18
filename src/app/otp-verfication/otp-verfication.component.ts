@@ -21,19 +21,20 @@ export class OtpVerficationComponent {
   }
   veryfyOTP(){
     const otpData = {otp: this.otp};
-    this.http.post('http://localhost:3000/verify-otp',otpData)
-    .subscribe((res:any)=>{
-      if(res.success){
-        this.verificationLogic = 'OTP verified successfully!'
+    this.http.post('http://localhost:3000/api/verify-otp',otpData)
+    .subscribe({
+      next: (res:any)=>{
+        if(res.success){
+          this.verificationLogic = 'OTP verfied successfully!'
+        }
+        else{
+          this.verificationLogic = 'OTP verification failed!'
+        }
+      },
+      error:(error:any)=>{
+        this.verificationLogic = 'An Error occur!'
+        console.log('There was an error : ',error)
       }
-      else{
-        this.verificationLogic = 'OTP verification failed!'
-      }
-      this.verificationLogic = 'OTP verfied successfully!'
-    },(error:any)=>{
-      this.verificationLogic ='An Error occured : ';
-      console.log('OTP Error : ',error)
-    }
-  )
+    })
   }
 }
